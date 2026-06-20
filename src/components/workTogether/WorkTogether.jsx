@@ -1,5 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-scroll";
 
 const WorkTogether = () => {
   return (
@@ -12,8 +13,10 @@ const WorkTogether = () => {
           I'm always open to discussing new projects and creative ideas. Let's
           connect and build something amazing together.
         </p>
-        <a
-          href="#contact"
+        <Link
+          to="contact"
+          smooth={true}
+          duration={900}
           className="btn btn-primary px-4 md:px-6.5 py-3 md:py-6 text-[12px] md:text-[16px]"
         >
           Let's work Together
@@ -23,7 +26,7 @@ const WorkTogether = () => {
             style={{ color: "#FFFFFF" }}
             className="ms-3"
           />
-        </a>
+        </Link>
       </div>
     </div>
   );
