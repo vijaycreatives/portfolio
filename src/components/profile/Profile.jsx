@@ -1,4 +1,4 @@
-import person from "../../assets/images/person2.png";
+import toolsImages from "../../assets/tools_images.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-scroll";
@@ -15,9 +15,9 @@ const Profile = () => {
         <div className="xxl:max-w-106 w-auto h-auto xxl:max-h-126">
           <div className="max-w-106 h-117 object-fill overflow-hidden rounded-xl">
             <img
-              className="bg-soft-white h-[120%] object-cover"
-              src={person}
-              alt="Vijay Prasath B"
+              className="bg-soft-white object-cover"
+              src={toolsImages}
+              alt="toolsImages"
             />
           </div>
           {/* Social media section */}
