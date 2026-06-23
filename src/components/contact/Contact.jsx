@@ -3,9 +3,10 @@ import {
   faLocationDot,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Address from "./Address";
 import Form from "./Form";
-import SocialMedia from "../common/socialMedia/SocialMedia";
 
 const addressData = [
   {
@@ -27,35 +28,47 @@ const addressData = [
 
 const Contact = () => {
   return (
-    <div className="relative -bottom-15 -mt-15 z-10 px-2">
+    <div className="relative -bottom-15 -mt-15 z-10 px-4">
       <div
-        className="content p-4 md:p-10 lg:p-22 bg-white rounded-2xl shadow-[0px_0px_90px_9px_rgba(0,_0,_0,_0.1)]"
+        className="content p-6 md:p-12 lg:p-16 bg-white rounded-3xl border border-gray-200 shadow-xl shadow-gray-250/30"
         id="contact"
       >
-        <div className="flex flex-col-reverse lg:gap-5 xl:gap-25.75 lg:flex-row justify-between">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          {/* Left Column: Contact details */}
+          <div className="flex flex-col lg:border-r lg:border-gray-200 lg:pr-16 justify-between">
             <div>
-              <p className="text-[35px] max-lg:hidden font-semibold text-nowrap text-[#132238]">
-                Let’s discuss your Project
-              </p>
-              <p className="text-[12px] xs:text-[14px] sm:text-lg md:text-lg max-lg:text-center pt-4 font-normal text-soft-dark">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-950">
+                Let's discuss your project
+              </h2>
+              <p className="text-sm sm:text-base font-normal text-gray-500 mt-4 leading-relaxed max-w-md">
                 I'm available for freelance work. Drop me a line if you have a
                 project you think I'd be a good fit for.
               </p>
             </div>
-            <div className="my-8.75 sm:max-lg:flex justify-between items-center">
+            
+            {/* Address Items (Vertical stack) */}
+            <div className="flex flex-col gap-4 my-8">
               {addressData.map((item, index) => (
                 <Address item={item} key={index} />
               ))}
             </div>
-            <div className="w-full max-lg:text-center max-md:mb-4">
-              <SocialMedia />
+            
+            {/* Connect on LinkedIn Button */}
+            <div className="w-full">
+              <a
+                href="https://www.linkedin.com/in/vijay-prasath-863002254/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 border border-gray-200 hover:border-picto-primary hover:text-picto-primary rounded-xl px-5 py-3 text-sm sm:text-base font-semibold text-gray-700 bg-white transition-all duration-300 w-fit cursor-pointer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="text-[#0a66c2] text-lg" />
+                Connect on LinkedIn
+              </a>
             </div>
           </div>
-          <div className="w-full overflow-y-scroll py-6.5">
-            <p className="text-xl mb-2 xs:text-2xl sm:text-2xl md:text-[38px] font-semibold text-[#132238] lg:hidden text-center">
-              Let’s discuss your Project
-            </p>
+
+          {/* Right Column: Contact form */}
+          <div className="w-full flex items-center">
             <Form />
           </div>
         </div>

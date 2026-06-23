@@ -25,7 +25,8 @@ const experienceData = [
     id: 1,
     date: "2024 – Present",
     location: "Salem, Tamil Nadu",
-    title: "Full Stack Developer | Sigma Computers",
+    title: "Full Stack Developer",
+    company: "Sigma Computers",
     highlights: [
       "Built and maintained custom OpenCart 2.x/4.x modules to extend e-commerce functionality including payment gateways and theme customization.",
       "Developed scalable backend systems using PHP 8+ and CodeIgniter 4 following MVC architecture and RESTful API best practices.",
@@ -38,10 +39,17 @@ const experienceData = [
 
 const Blog = () => {
   return (
-    <div className="content py-25 px-2 relative" id="blog">
-      <div className="max-w-135 text-center mx-auto pb-17.5">
-        <p className="section-title pb-6">Work Experience</p>
-        <p className="text-xs xs:text-[16px] md:text-lg text-gray-400">
+    <div className="content py-25 px-4 relative" id="blog">
+      <div className="max-w-3xl text-center mx-auto pb-12">
+        <div className="flex items-center justify-center gap-2 text-picto-primary text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3">
+          <span className="w-8 h-[1px] bg-picto-primary"></span>
+          WORK EXPERIENCE
+          <span className="w-8 h-[1px] bg-picto-primary"></span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Where I've worked
+        </h2>
+        <p className="text-xs xs:text-[16px] md:text-lg text-gray-500">
           Professional experience building scalable web applications and
           e-commerce solutions for real-world business needs.
         </p>

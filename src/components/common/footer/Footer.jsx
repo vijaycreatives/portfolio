@@ -1,53 +1,97 @@
-import logo from "../../../assets/logo.png";
 import { Link } from "react-scroll";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import logo from "../../../assets/Frame 12.jpg";
 
 const navItems = [
   { id: 1, name: "Home", url: "introduction" },
   { id: 2, name: "About", url: "profile" },
-  { id: 3, name: "Skills", url: "work-process" },
-  { id: 4, name: "Projects", url: "portfolio" },
-  { id: 5, name: "Experience", url: "blog" },
-  { id: 6, name: "Education", url: "education" },
-  { id: 7, name: "Services", url: "services" },
+  { id: 3, name: "Services", url: "services" },
+  { id: 4, name: "Skills", url: "work-process" },
+  { id: 5, name: "Projects", url: "portfolio" },
+  { id: 6, name: "Experience", url: "blog" },
+  { id: 7, name: "Education", url: "education" },
   { id: 8, name: "Contact", url: "contact" },
 ];
-const copyrightYear = new Date().getFullYear();
+
+const copyrightYear = 2026; // Static 2026 to match mockup, or dynamic: new Date().getFullYear();
+
+const codeIcon = (
+  <svg
+    className="w-5 h-5 text-white"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="8 6 2 12 8 18"></polyline>
+    <polyline points="16 6 22 12 16 18"></polyline>
+  </svg>
+);
 
 const Footer = () => {
   return (
-    <div className="pt-25 md:pt-40 content max-2xl:px-3">
-      <div className="flex max-md:flex-col justify-between mx-0 items-center h-full w-full text-neutral-200">
-        <Link
-          to="introduction"
-          smooth={true}
-          duration={900}
-          className="flex items-center border-0"
-        >
+    <div className="pt-10 md:pt-16 content px-4">
+      {/* Top Row: Logo, Links, and Social icons */}
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-6 w-full pb-8">
+
+        {/* Left Side: Code Logo + Name */}
+        <div className="flex items-center gap-3">
           <img src={logo} className="h-8 sm:h-14 rounded-2xl" alt="logo" />
-          <p className="text-3xl sm:text-[32px] my-auto ms-[12px] font-semibold">
-            Vijay
-          </p>
-        </Link>
-        <div className="mx-7 max-md:my-7 text-center">
+          <span className="text-xl font-bold text-gray-950 text-nowrap">
+            Vijay Prasath
+          </span>
+        </div>
+
+        {/* Center: Navigation Links */}
+        <div className="flex flex-wrap gap-x-6 gap-y-3 justify-center">
           {navItems.map((item) => (
             <Link
               key={item.id}
               to={item.url}
               smooth={true}
               duration={900}
-              className="mx-2 group inline-block relative w-fit text-[12px] sm:text-[16px] cursor-pointer"
+              className="text-gray-500 hover:text-picto-primary text-sm sm:text-base font-medium transition-colors duration-300 cursor-pointer"
             >
               {item.name}
-              <span className="absolute left-0 bottom-0 h-0.5 w-full bg-white scale-x-0 duration-300 group-hover:scale-x-100"></span>
             </Link>
           ))}
         </div>
-        <p className="text-[12px] sm:text-[16px]">
-          Copyright &copy; {copyrightYear} Vijay Prasath B.
-        </p>
+
+        {/* Social Buttons */}
+        <div className="flex items-center gap-3">
+          <a
+            href="mailto:prasathbabu2001@gmail.com"
+            className="w-10 h-10 border border-gray-200 hover:border-picto-primary text-picto-primary flex items-center justify-center rounded-xl bg-white transition-all duration-300 hover:shadow-sm"
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+          <a
+            href="tel:+917339090614"
+            className="w-10 h-10 border border-gray-200 hover:border-picto-primary text-picto-primary flex items-center justify-center rounded-xl bg-white transition-all duration-300 hover:shadow-sm"
+          >
+            <FontAwesomeIcon icon={faPhone} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/vijay-prasath-863002254/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 border border-gray-200 hover:border-picto-primary text-picto-primary flex items-center justify-center rounded-xl bg-white transition-all duration-300 hover:shadow-sm"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+        </div>
       </div>
-      <p className="text-white text-center max-xs:text-[12px] max-md:text-[14px] w-full py-10">
-        Full Stack Developer | PHP | CodeIgniter | OpenCart
+
+      {/* Horizontal Divider Line */}
+      <hr className="border-gray-100 w-full mb-8" />
+
+      {/* Copyright text */}
+      <p className="text-sm sm:text-base text-gray-500 text-center pb-8 font-medium">
+        &copy; {copyrightYear} Vijay Prasath B. Full Stack Developer - Salem, Tamil Nadu.
       </p>
     </div>
   );

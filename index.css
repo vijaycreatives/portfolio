@@ -33,7 +33,7 @@ body {
 }
 
 .content {
-  @apply max-xxl:w-full xxl:max-w-[1320px] xxl:mx-auto;
+  @apply max-xxl:w-full xxl:max-w-[1320px] xxl:mx-auto px-4 xs:px-6 sm:px-8;
 }
 
 .section-title {

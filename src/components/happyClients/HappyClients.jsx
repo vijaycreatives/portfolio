@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+
 const educationData = [
   {
     id: 1,
@@ -17,28 +20,41 @@ const educationData = [
 
 const HappyClients = () => {
   return (
-    <div className="content py-10 md:py-25 flex flex-col items-center px-2" id="education">
-      <div className="max-w-144.25 text-center">
-        <p className="section-title mb-6">Education</p>
-        <p className="text-[14px] sm:text-lg text-soft-dark font-normal">
+    <div className="content py-10 md:py-25 flex flex-col items-center px-4" id="education">
+      <div className="max-w-3xl text-center mx-auto pb-12">
+        <div className="flex items-center justify-center gap-2 text-picto-primary text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3">
+          <span className="w-8 h-[1px] bg-picto-primary"></span>
+          EDUCATION
+          <span className="w-8 h-[1px] bg-picto-primary"></span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Academic background
+        </h2>
+        <p className="text-xs xs:text-[16px] md:text-lg text-gray-500">
           Academic background from Sona College of Technology and Sri Gayathri
           Higher Secondary School, Salem.
         </p>
       </div>
-      <div className="grid md:grid-cols-2 gap-6 mt-10 max-w-4xl w-full">
+      
+      <div className="grid md:grid-cols-2 gap-6 mt-6 max-w-4xl w-full">
         {educationData.map((item) => (
           <div
             key={item.id}
-            className="p-6 md:p-8 bg-white rounded-lg border border-gray-200 hover:shadow-xl shadow-gray-200 transition-all duration-300"
+            className="p-6 md:p-8 bg-white rounded-3xl border border-gray-100 hover:shadow-xl shadow-sm shadow-gray-200/50 transition-all duration-300 flex flex-col items-start"
           >
-            <p className="text-picto-primary text-sm font-medium">{item.period}</p>
-            <p className="text-xl sm:text-2xl font-semibold text-gray-900 mt-2">
+            {/* Top-left Graduation Cap Icon Box */}
+            <div className="w-12 h-12 bg-[#F6EBFE] rounded-xl flex items-center justify-center mb-5">
+              <FontAwesomeIcon icon={faGraduationCap} className="text-picto-primary text-lg" />
+            </div>
+            
+            <p className="text-picto-primary text-sm font-medium mb-2">{item.period}</p>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
               {item.degree}
-            </p>
-            <p className="text-[14px] sm:text-[16px] text-gray-600 mt-2">
+            </h3>
+            <p className="text-sm sm:text-base text-gray-500 mb-4">
               {item.institution}
             </p>
-            <p className="text-[14px] sm:text-[16px] font-medium text-gray-800 mt-3">
+            <p className="text-sm sm:text-base font-bold text-gray-900">
               {item.score}
             </p>
           </div>
