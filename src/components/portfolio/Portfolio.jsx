@@ -2,8 +2,8 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Projects from "./Projects";
 import card1 from "../../assets/images/portfolio-images/s2_media.png";
-import card2 from "../../assets/images/portfolio-images/card-2.png";
-import card3 from "../../assets/images/portfolio-images/card-3.png";
+import card2 from "../../assets/images/portfolio-images/senthur_africa.png";
+import card3 from "../../assets/images/portfolio-images/aarc_management.png";
 
 const projectData = [
   {
@@ -13,7 +13,7 @@ const projectData = [
     title: "S2Media — Advertising Management System",
     description:
       "Enterprise ad booking and billing platform for multi-channel media placements — newspapers, radio (FM), TV, theatre, outdoor, and digital (YouTube). Features Release Order (RO) with shift/cancel/revision, automated invoice generation, accounts receivable, lead/client management, sub-agent management, press meet tracking, email/SMS notifications, role-based user permissions, and real-time booking dashboards with advt reminders. Includes REST API for mobile app integration.",
-    link: "#!",
+    link: "/project/s2media",
   },
   {
     id: 2,
@@ -22,12 +22,12 @@ const projectData = [
     title: "Borewell Management System",
     description:
       "Field service management system to track borewell operations, machine usage, and technician assignments. Features fuel consumption tracking, machine performance analytics, and automated invoice and service report workflows.",
-    link: "#!",
+    link: "/project/senthur",
   },
   {
     id: 3,
     image: card3,
-    category: "PHP · CodeIgniter 4 · MySQL",
+    category: "React Js · Node Js · MySQL",
     title: "AARC — Budget Planning & Audit System",
     description:
       "Annual budget planning system enabling organizations to project, allocate, and monitor budgets across departments. Implements audit workflows comparing previous year actual spend against current-month budgets with real-time variance insights.",

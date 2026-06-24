@@ -3,6 +3,8 @@ import { createHashRouter } from "react-router-dom";
 import Loading from "../components/common/loading/Loading";
 
 const Home = lazy(() => import("../pages/Home"));
+const S2MediaProject = lazy(() => import("../pages/S2MediaProject"));
+const SenthurProject = lazy(() => import("../pages/SenthurProject"));
 const Main = lazy(() => import("../layouts/Main"));
 
 export const router = createHashRouter([
@@ -18,6 +20,22 @@ export const router = createHashRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "project/s2media",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <S2MediaProject />
+          </Suspense>
+        ),
+      },
+      {
+        path: "project/senthur",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <SenthurProject />
+          </Suspense>
+        ),
       },
     ],
   },
