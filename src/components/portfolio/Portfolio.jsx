@@ -31,7 +31,7 @@ const projectData = [
     title: "AARC — Budget Planning & Audit System",
     description:
       "Annual budget planning system enabling organizations to project, allocate, and monitor budgets across departments. Implements audit workflows comparing previous year actual spend against current-month budgets with real-time variance insights.",
-    link: "#!",
+    link: "/project/aarc",
   },
 ];
 

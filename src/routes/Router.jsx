@@ -5,6 +5,7 @@ import Loading from "../components/common/loading/Loading";
 const Home = lazy(() => import("../pages/Home"));
 const S2MediaProject = lazy(() => import("../pages/S2MediaProject"));
 const SenthurProject = lazy(() => import("../pages/SenthurProject"));
+const AarcProject = lazy(() => import("../pages/AarcProject"));
 const Main = lazy(() => import("../layouts/Main"));
 
 export const router = createHashRouter([
@@ -34,6 +35,14 @@ export const router = createHashRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <SenthurProject />
+          </Suspense>
+        ),
+      },
+      {
+        path: "project/aarc",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <AarcProject />
           </Suspense>
         ),
       },
